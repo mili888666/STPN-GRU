@@ -20,9 +20,9 @@ def asym_adj(adj):
 
 def load_data(data_name, ratio = [0.7, 0.1]):
     if data_name == 'US':
-        adj_mx = np.load('C:/Users\lenovo\Desktop\神经网络学习\STPN-main-修\my_data/airport_adjacency_gaussian_filtered.npy')
+        adj_mx = np.load('../my_data/airport_adjacency_gaussian_filtered.npy')
         #机场网络邻接矩阵
-        od_power = np.load('C:/Users\lenovo\Desktop\神经网络学习\STPN-main-修\my_data/airport_traffic_matrix.npy')
+        od_power = np.load('../my_data/airport_traffic_matrix.npy')
         # 交通流量矩阵
         od_power = od_power/(1.5*od_power.max())
         # 归一化
@@ -44,8 +44,8 @@ def load_data(data_name, ratio = [0.7, 0.1]):
         """asym_adj(adj_mx): 机场之间的基础邻接矩阵。
         asym_adj(od_power): 乘客流量的邻接矩阵（方向：出发 -> 到达）。
         asym_adj(od_power.T): 乘客流量的邻接矩阵（方向：到达 -> 出发）。"""
-        data = np.load('C:/Users\lenovo\Desktop\神经网络学习\STPN-main-修\my_data/airport_resilience_3d.npy')
-        wdata = np.load('C:/Users\lenovo\Desktop\神经网络学习\STPN-main-修\my_data/airport_weather_operations_3d.npy')
+        data = np.load('../my_data/airport_resilience_3d.npy')
+        wdata = np.load('../my_data/airport_weather_operations_3d.npy')
     if data_name == 'China':
         adj_mx = np.load('C://Users//lenovo//Desktop//神经网络学习//STPN-main//delay_data//cdata//dist_mx.npy')
         od_power = np.load('C:/Users\lenovo\Desktop\神经网络学习\STPN-main\my_data/airport_weather_operations_3d.npy')
